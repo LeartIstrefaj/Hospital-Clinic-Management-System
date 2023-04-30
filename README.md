@@ -1,1 +1,1 @@
-# Hospital-Clinic-Managment-System
+# Hospital-Clinic-Management-System
