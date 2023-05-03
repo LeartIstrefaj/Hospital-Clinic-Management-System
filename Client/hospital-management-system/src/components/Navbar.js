@@ -27,7 +27,7 @@ function Navbar() {
         </ul>
     
       </div>
-      <a href="#" className="btn-logout me-1">Log out</a>
+      <a href="" className="btn-logout me-1">Log out</a>
       
     </div>
   </nav>
