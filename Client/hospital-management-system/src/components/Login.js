@@ -7,7 +7,7 @@ export const Login = () => {
 
                     <h2>🖐</h2>
                     <h3 className="text-center login-title">Welcome Back!</h3>
-                    <input type="text" className="form-control" placeholder="Work email*" />
+                    <input type="text" className="form-control" placeholder="Work email*"  />
                     <input type="password" className="form-control" placeholder="Password*" />
                     <a href="" className="btn btn-login">Login</a>
 

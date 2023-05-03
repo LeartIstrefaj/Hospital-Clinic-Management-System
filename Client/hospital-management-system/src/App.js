@@ -5,8 +5,11 @@ import { Login } from './components/Login';
 
 function App() {
   return (
-    // <Navbar />
-    <Login />
+    <div>
+      <Login />
+      <Navbar />
+    </div>
+    
   );
 }
 
