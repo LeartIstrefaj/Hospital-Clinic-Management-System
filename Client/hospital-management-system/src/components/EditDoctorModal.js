@@ -16,11 +16,11 @@ export class EditDoctorModal extends Component{
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                UserID:event.target.UserID.value,
-                FullName:event.target.FullName.value,
-                Email:event.target.Email.value,
-                Password:event.target.Password.value,
-                NrTel:event.target.NrTel.value
+                UserId: event.target.UserId.value,
+                FullName: event.target.FullName.value,
+                Email: event.target.Email.value,
+                Password: event.target.Password.value,
+                NrTel: event.target.NrTel.value
 
             })
         })
@@ -54,9 +54,9 @@ centered
         <Row>
             <Col sm={6} className="mx-auto">
                 <Form onSubmit={this.handleSubmit}>
-                <Form.Group controlId="UserID">
+                <Form.Group controlId="UserId">
                         <Form.Label>User ID</Form.Label>
-                        <Form.Control type="text" name="UserID" required
+                        <Form.Control type="text" name="UserId" required
                         disabled
                         defaultValue={this.props.doctorid} 
                         placeholder="User ID"/>

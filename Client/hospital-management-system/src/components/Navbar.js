@@ -1,7 +1,7 @@
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import {Login} from "./Login";
 import { Dashboard } from "./Dashboard";
-import { Doctor } from "../components/Users/Doctor";
+import { Doctor } from "./Doctor";
 import { Logout } from "./Logout";
 
 function Navbar() {

@@ -71,6 +71,12 @@ export class AddDoctorModal extends Component {
                                             placeholder="Password" />
                                     </Form.Group>
 
+                                    <Form.Group controlId="NrTel">
+                                        <Form.Label>Nr Tel</Form.Label>
+                                        <Form.Control type="text" name="NrTel" required
+                                            placeholder="Nr Tel" />
+                                    </Form.Group>
+
                                     <Form.Group className='d-flex justify-content-center'>
                                         <Button variant="primary" className='rounded-5'  type="submit">
                                             Done

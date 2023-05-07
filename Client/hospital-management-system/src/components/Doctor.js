@@ -3,8 +3,8 @@ import { Table } from 'react-bootstrap';
 
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import { AddDoctorModal } from '../Users/AddDoctorModal';
-import { EditDoctorModal } from '../Users/EditDoctorModal';
+import { AddDoctorModal } from '../components/AddDoctorModal';
+import { EditDoctorModal } from '../components/EditDoctorModal';
 
 export class Doctor extends Component {
 
@@ -29,9 +29,9 @@ export class Doctor extends Component {
         this.refreshList();
     }
 
-    deleteTeams(doctorid) {
+    deleteTeams(did) {
         if (window.confirm('Are you sure?')) {
-            fetch('http://localhost:36468/api/doctor/' + doctorid, {
+            fetch('http://localhost:36468/api/doctor/' + did, {
                 method: 'DELETE',
                 header: {
                     'Accept': 'application/json',
@@ -63,8 +63,8 @@ export class Doctor extends Component {
                     </thead>
                     <tbody>
                         {doctorr.map(doctor =>
-                            <tr key={doctor.UserID }>
-                                <td>{doctor.UserID }</td>
+                            <tr key={doctor.UserId }>
+                                <td>{doctor.UserId }</td>
                                 <td>{doctor.FullName }</td>
                                 <td>{doctor.Email }</td>
                                 <td>{doctor.Password}</td>
@@ -74,13 +74,13 @@ export class Doctor extends Component {
                                         <Button className="mr-2" variant="warning"
                                             onClick={() => this.setState({
                                                 editModalShow: true,
-                                                doctorid: doctor.UserID, doctorfullname: doctor.FullName,doctoremail: doctor.Email, doctorpassword: doctor.Password, doctornrtel: doctor.NrTel
+                                                doctorid: doctor.UserId, doctorfullname: doctor.FullName,doctoremail: doctor.Email, doctorpassword: doctor.Password, doctornrtel: doctor.NrTel
                                             })}>
                                             Edit
         </Button>
 
                                         <Button className="mr-2" variant="danger"
-                                            onClick={() => this.deleteTeams(doctor.UserID)}>
+                                            onClick={() => this.deleteTeams(doctor.UserId)}>
                                             Delete
         </Button>
 
