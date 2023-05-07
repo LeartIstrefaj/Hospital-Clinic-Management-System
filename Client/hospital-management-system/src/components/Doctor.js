@@ -3,8 +3,8 @@ import { Table } from 'react-bootstrap';
 
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import { AddDoctorModal } from '../components/AddDoctorModal';
-import { EditDoctorModal } from '../components/EditDoctorModal';
+import { AddDoctorModal } from './AddDoctorModal';
+import { EditDoctorModal } from './EditDoctorModal';
 
 export class Doctor extends Component {
 
