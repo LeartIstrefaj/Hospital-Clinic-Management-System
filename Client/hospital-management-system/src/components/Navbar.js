@@ -2,6 +2,8 @@ import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import {Login} from "./Login";
 import { Dashboard } from "./Dashboard";
 import { Doctor } from "./Doctor";
+import {Nurse} from "./Nurse";
+import {Patient} from "./Patient";
 import { Logout } from "./Logout";
 
 function Navbar() {
@@ -46,6 +48,8 @@ function Navbar() {
       <Route path="/logout" element={<Logout />} />
       <Route path="/" element={<Dashboard />} />
       <Route path="/doctor" element={<Doctor />} />
+      <Route path="/nurse" element={<Nurse />} />
+      <Route path="/patient" element={<Patient />} />
     </Routes>
   </div>
   </BrowserRouter>

@@ -12,7 +12,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Numerics;
 
-namespace WebAPI.Controllers
+namespace HMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -52,19 +52,19 @@ namespace WebAPI.Controllers
         [HttpPost]
         public JsonResult Post(Nurse nurse)
         {
-             //string query = @"
+            //string query = @"
             //  insert into dbo.Nurse
-           //    (Username, Email, Password, FullName, PhoneNumber, Role, DataCreated)
-             //   values
+            //    (Username, Email, Password, FullName, PhoneNumber, Role, DataCreated)
+            //   values
 
-                //,'" + nurse.FullName + @"'
-                //,'" + nurse.Email + @"'
-                //,'" + nurse.Password + @"'
-                //,'" + nurse.NrTel + @"'
-               // )
-                //";
+            //,'" + nurse.FullName + @"'
+            //,'" + nurse.Email + @"'
+            //,'" + nurse.Password + @"'
+            //,'" + nurse.NrTel + @"'
+            // )
+            //";
 
-                string q = @"
+            string q = @"
             insert into dbo.users (FullName, Email, Password, NrTel,Role)
             values ('" + nurse.FullName + @"', '" + nurse.Email + @"', '" + nurse.Password + @"', '" + nurse.NrTel + @"', '" + nurse.Role + @"')
             ";
@@ -91,12 +91,15 @@ namespace WebAPI.Controllers
         public JsonResult Put(Nurse nurse)
         {
             string query = @"
-               update dbo.Nurse set 
-               FullName  = '" + nurse.FullName + @"'
-               where UserId = " + nurse.UserId + @"
+               update dbo.users set 
+               FullName = '" + nurse.FullName + @"'
+               ,Email = '" + nurse.Email + @"'
+                ,Password = '" + nurse.Password + @"'
+                ,NrTel = '" + nurse.NrTel + @"'
+               where UserID = " + nurse.UserID + @"
                ";
-                  DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("HMSCon");
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("HMSCon");    
             SqlDataReader myReader;
             using (SqlConnection myCon = new SqlConnection(sqlDataSource))
             {
@@ -140,4 +143,6 @@ namespace WebAPI.Controllers
                 return new JsonResult("Deleted Successfully");
             }
         }
+    }
+}
                

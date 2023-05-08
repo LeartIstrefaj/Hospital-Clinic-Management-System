@@ -82,6 +82,9 @@ namespace HMS.Controllers
             string query = @"
                update dbo.users set 
                FullName = '" + p.FullName + @"'
+               ,Email = '" + p.Email + @"'
+                ,Password = '" + p.Password + @"'
+                ,NrTel = '" + p.NrTel + @"'
                where UserID = " + p.UserID + @"
                ";
             DataTable table = new DataTable();

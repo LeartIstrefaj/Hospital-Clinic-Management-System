@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button, Row, Col, Form } from 'react-bootstrap';
 
 
-export class AddDoctorModal extends Component {
+export class AddNurseModal extends Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,7 +10,7 @@ export class AddDoctorModal extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch('http://localhost:36468/api/doctor', {
+        fetch('http://localhost:36468/api/nurse', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -22,7 +22,7 @@ export class AddDoctorModal extends Component {
 
             })
         })
-            .then(doctor => doctor.json())
+            .then(nurse => nurse.json())
             .then((result) => {
                 alert(result);
             },
@@ -41,7 +41,7 @@ export class AddDoctorModal extends Component {
                     centered>
                     <Modal.Header clooseButton>
                         <Modal.Title className='ms-auto' id="contained-modal-title-vcenter">
-                            Add Doctor
+                            Add Nurse
 
                         </Modal.Title>
 
@@ -77,16 +77,10 @@ export class AddDoctorModal extends Component {
                                             placeholder="Nr Tel" />
                                     </Form.Group>
 
-                                    {/* <Form.Group controlId="Role">
-                                        <Form.Label>Role</Form.Label>
-                                        <Form.Control type="text" name="Role" required
-                                            placeholder="Role" />
-                                    </Form.Group> */}
-
                                     <Form.Group controlId="Role">
                                         <Form.Label>Role </Form.Label>
                                         <Form.Control as="select">
-                                                <option>Doctor</option>
+                                                <option>Nurse</option>
                                         </Form.Control>
                                     </Form.Group>
 
