@@ -41,15 +41,15 @@ export class EditDoctorModal extends Component{
 
 <Modal
 {...this.props}
-size="lg"
+size="md"
 aria-labelledby="contained-modal-title-vcenter"
 centered
 >
     <Modal.Header clooseButton>
-        <Modal.Title className='ms-auto' id="contained-modal-title-vcenter">
+        <Modal.Title className='ms-auto modal-title' id="contained-modal-title-vcenter">
             Edit Doctor
         </Modal.Title>
-        <Button variant="danger" className='ms-auto' onClick={this.props.onHide}>X</Button>
+        <Button variant="danger" className='ms-auto btn-exit' onClick={this.props.onHide}>X</Button>
 
     </Modal.Header>
     <Modal.Body>
@@ -58,7 +58,7 @@ centered
             <Col sm={6} className="mx-auto">
                 <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="UserId">
-                        <Form.Label>User ID</Form.Label>
+                        {/* <Form.Label>User ID</Form.Label> */}
                         <Form.Control type="text" name="UserId" required
                         disabled
                         defaultValue={this.props.doctorid} 
@@ -66,14 +66,14 @@ centered
                     </Form.Group>
 
                     <Form.Group controlId="FullName">
-                        <Form.Label>FullName</Form.Label>
+                        {/* <Form.Label>FullName</Form.Label> */}
                         <Form.Control type="text" name="FullName" required 
                         defaultValue={this.props.doctorfullname}
                         placeholder="Full Name"/>
                     </Form.Group>
 
                     <Form.Group controlId="Email">
-                        <Form.Label>Email</Form.Label>
+                        {/* <Form.Label>Email</Form.Label> */}
                         <Form.Control type="text" name="Email" required 
                         defaultValue={this.props.doctoremail}
                         placeholder="Email"/>
@@ -81,21 +81,21 @@ centered
 
                     
                     <Form.Group controlId="Password">
-                        <Form.Label>Password</Form.Label>
+                        {/* <Form.Label>Password</Form.Label> */}
                         <Form.Control type="text" name="Password" required 
                         defaultValue={this.props.doctorpassword}
                         placeholder="Password"/>
                     </Form.Group>
 
                     <Form.Group controlId="NrTel">
-                        <Form.Label>Nr Tel</Form.Label>
+                        {/* <Form.Label>Nr Tel</Form.Label> */}
                         <Form.Control type="text" name="NrTel" required 
                         defaultValue={this.props.doctornrtel}
                         placeholder="Nr Tel"/>
                     </Form.Group>
 
                     <Form.Group className='d-flex justify-content-center'>
-                        <Button variant="primary" className='rounded-5' type="submit">
+                        <Button variant="primary" className='rounded-5 mt-3 btn-add' type="submit">
                             Update
                         </Button>
                     </Form.Group>

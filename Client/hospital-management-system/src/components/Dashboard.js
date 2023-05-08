@@ -1,5 +1,5 @@
 export const Dashboard = () =>{
     return(
-        <h2 className="test">Dashboard page</h2>
+        <h2 className="test">we are working on this part😃</h2>
     );
 }

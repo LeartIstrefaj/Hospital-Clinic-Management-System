@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 /* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.navbar{
+.navbar {
   box-shadow: 20px 5px 25px 16px #f2f7fc;
 }
-#logo{
+
+#logo {
   font-family: 'Inter' sans-serif !important;
   /* font-family: 'Pacifico', cursive !important; */
   letter-spacing: 2.5px;
@@ -18,16 +20,33 @@
   text-transform: uppercase;
   color: #2c2c2c !important;
 }
-.nav-link{
+
+.navbar-toggler {
+  font-size: 15px;
+  outline: none;
+  border: none !important;
+
+}
+
+.navbar-toggler:focus {
+
+  outline: none;
+  border: none !important;
+
+}
+
+.nav-link {
   font-family: 'Inter' sans-serif !important;
   font-size: 15px;
 
 }
-.nav-link:focus{
+
+.nav-link:focus {
   transition: .5s ease !important;
   color: #83b3c0 !important;
 }
-.btn-logout{
+
+.btn-logout {
   background-color: #83b3c0;
   text-decoration: none;
   padding: 5px 15px;
@@ -35,25 +54,29 @@
   font-size: 14px;
   color: #fff;
 }
-.btn-logout:hover{
+
+.btn-logout:hover {
   transition: .5s ease-in-out;
   background-color: #f2f7fc;
   color: #2c2c2c;
 }
-.login{
+
+.login {
   height: 60vh !important;
   background-color: #f2f7fc;
   width: 40%;
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
-} 
-#log{
+}
+
+#log {
   background-color: #fff;
   height: 100vh;
   align-items: center;
 }
-.form-control{
+
+.form-control {
   width: 85%;
   border-radius: none !important;
   border: none !important;
@@ -62,20 +85,23 @@
   background: none !important;
   font-size: 14px;
 }
-.form-control:focus{
+
+.form-control:focus {
   background: none;
   outline: none !important;
-  border:none !important;
+  border: none !important;
 }
-.login-title{
-  margin-bottom:25px !important;
+
+.login-title {
+  margin-bottom: 25px !important;
   font-family: 'Inter', sans-serif;
   font-size: 25px;
   font-weight: bold !important;
   text-transform: lowercase;
 
 }
-.btn-login{
+
+.btn-login {
   margin-top: 5%;
   width: 85%;
   background-color: #83b3c0 !important;
@@ -85,22 +111,97 @@
   text-transform: uppercase;
   font-weight: 500;
 }
-.btn-login:hover{
+
+.btn-login:hover {
   transition: .5s ease-in-out;
   background-color: #143451 !important;
   /* background-color: #489FB5 !important; alternate color*/
   /* color: #2c2c2c; */
   color: #fff;
 }
-.footer-copyright-login{
+
+.footer-copyright-login {
   font-size: 12px;
   margin-top: 15%;
 }
 
-.test{
+.test {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* .table-design{
+  border: none !important;
+  background-color: #143451 !important;
+} */
+/* .table-head{
+} */
+table {
+  background-color: #CEE3F0 !important;
+  color: #143451 !important;
+  outline-color: none !important;
+  border-color: none !important;
+  border-radius: 8px !important;
+
+}
+tr{
+  border: none !important;
+}
+
+.table-bordered {
+  border-right-width: 0px !important;
+}
+
+.btn-add{
+  /* background-color: #447987 !important; */
+  /* background-color: #82C0CC !important; */
+  background-color: #83b3c0 !important;
+  text-decoration: none;
+  outline: none !important;
+  border: none !important;
+  padding: 5px 15px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 400 !important;
+  color: #fff;
+}
+th{
+  border: none !important;
+  font-size: 15px !important;
+  padding:15px !important;
+  /* background-color: #CEE3F0 !important; */
+}
+ td{
+  border: none !important;
+  background-color: #f2f7fc !important;
+  /* color: #143451 !important; */
+}
+
+.modal-title{
+  font-size: 18px !important;
+}
+.modal-header{
+  border:none !important;
+}
+.btn-exit{
+  width: 10% !important;
+  outline: none;
+  border:none !important;
+  background-color: #CEE3F0 !important;
+  color: #143451;
+}
+.btn-action{
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+.button-toolbar{
+  outline:none;
+  border: none;
+  background-color: #CEE3F0 !important;
+}
+svg{
+  color: #143451 !important;
 }
