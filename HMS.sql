@@ -10,4 +10,7 @@ DateCreated date
 );
 
 
-select * from users
+create table Departments(
+DepID int identity(1,1),
+DepName varchar(200)
+);
