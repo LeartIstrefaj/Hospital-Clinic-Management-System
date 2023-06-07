@@ -5,6 +5,7 @@ import { Doctor } from "./Doctor";
 import {Nurse} from "./Nurse";
 import {Patient} from "./Patient";
 import { Logout } from "./Logout";
+import { Department } from './Department';
 
 function Navbar() {
   return (
@@ -31,7 +32,7 @@ function Navbar() {
               <Link className="nav-link ms-2" to="/patient">Patient</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link ms-2 me-3" href="#">Profile</Link>
+              <Link className="nav-link ms-2 me-3" to="/department">Department</Link>
             </li>
             {/* <li className="nav-item">
               <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -50,6 +51,7 @@ function Navbar() {
       <Route path="/doctor" element={<Doctor />} />
       <Route path="/nurse" element={<Nurse />} />
       <Route path="/patient" element={<Patient />} />
+      <Route path="/department" element={<Department />} /> 
     </Routes>
   </div>
   </BrowserRouter>
