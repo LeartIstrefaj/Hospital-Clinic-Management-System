@@ -23,10 +23,18 @@ export class Nurse extends Component {
 
     componentDidMount() {
         this.refreshList();
+        setInterval(() => {
+            this.refreshList();
+        }, 30000);
     }
-
-    componentDidUpdate() {
-        this.refreshList();
+    // componentDidUpdate() {
+    //     this.refreshList();
+    //     setInterval(() => {
+    //         this.refreshList();
+    //     }, 20000);
+    // }   
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     deleteTeams(nid) {

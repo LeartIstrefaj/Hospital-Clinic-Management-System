@@ -23,12 +23,21 @@ export class Patient extends Component {
 
     componentDidMount() {
         this.refreshList();
+        setInterval(() => {
+            this.refreshList();
+        }, 30000);
+    }
+    // componentDidUpdate() {
+    //     this.refreshList();
+    //     setInterval(() => {
+    //         this.refreshList();
+    //     }, 20000);
+    // }   
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
-    componentDidUpdate() {
-        this.refreshList();
-    }
-
+    
     deleteTeams(pid) {
         if (window.confirm('Are you sure?')) {
             fetch('http://localhost:36468/api/patient/' + pid, {
