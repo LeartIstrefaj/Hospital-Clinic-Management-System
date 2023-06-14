@@ -22,13 +22,16 @@ export class Department extends Component {
         this.refreshList();
         setInterval(() => {
             this.refreshList();
-        }, 20000);
+        }, 30000);
     }
-    componentDidUpdate() {
-        this.refreshList();
-        setInterval(() => {
-            this.refreshList();
-        }, 20000);
+    // componentDidUpdate() {
+    //     this.refreshList();
+    //     setInterval(() => {
+    //         this.refreshList();
+    //     }, 20000);
+    // }   
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     deleteDep(did) {

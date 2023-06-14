@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 /* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -204,4 +204,20 @@ th{
 }
 svg{
   color: #143451 !important;
+}
+.btn-toggle-password{
+  background-color: none !important;
+  border: none !important;
+}
+.btn-toggle-password:hover, .btn-toggle-password:focus{
+  outline: none !important;
+  background-color: none !important;
+}
+
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary:hover {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
 }

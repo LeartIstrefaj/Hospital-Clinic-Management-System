@@ -1,0 +1,14 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "name": "Admin",
+      "password": "admin",
+      "email": "admin@gmail.com",
+      "phone": "923469273594",
+      "country": "singapore",
+      "address": "Admin...",
+      "gender": "male"
+    }
+  ]
+}

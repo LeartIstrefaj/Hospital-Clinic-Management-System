@@ -4,7 +4,7 @@ import { Dashboard } from "./Dashboard";
 import { Doctor } from "./Doctor";
 import {Nurse} from "./Nurse";
 import {Patient} from "./Patient";
-import { Logout } from "./Logout";
+import { Logout } from "./Logout"; 
 import { Department } from './Department';
 
 function Navbar() {
