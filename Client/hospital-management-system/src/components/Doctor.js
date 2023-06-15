@@ -4,6 +4,7 @@ import { Table } from "react-bootstrap";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import { AddDoctorModal } from "./AddDoctorModal";
 import { EditDoctorModal } from "./EditDoctorModal";
+import Navbar from "./Navbar";
 
 export class Doctor extends Component {
   constructor(props) {
@@ -60,6 +61,8 @@ componentWillUnmount() {
     let addModalClose = () => this.setState({ addModalShow: false });
     let editModalClose = () => this.setState({ editModalShow: false });
     return (
+      <div>
+      <Navbar />
       <div className="container">
         <br />
         <br />
@@ -165,6 +168,7 @@ componentWillUnmount() {
             ))}
           </tbody>
         </Table>
+      </div>
       </div>
     );
   }

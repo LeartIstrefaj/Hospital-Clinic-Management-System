@@ -5,6 +5,7 @@ import { Table } from 'react-bootstrap';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { AddNurseModal } from './AddNurseModal';
 import { EditNurseModal } from './EditNurseModal';
+import Navbar from './Navbar';
 
 export class Nurse extends Component {
 
@@ -54,6 +55,8 @@ export class Nurse extends Component {
         let addModalClose = () => this.setState({ addModalShow: false });
         let editModalClose = () => this.setState({ editModalShow: false });
         return (
+            <div>
+                <Navbar />
             <div className='container'>
                
                 <br />
@@ -125,6 +128,7 @@ export class Nurse extends Component {
                 </Table>
 
                 
+            </div>
             </div>
         )
     }

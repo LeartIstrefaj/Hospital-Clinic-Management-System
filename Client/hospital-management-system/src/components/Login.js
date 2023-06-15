@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-export const Login = () => {
+export const Login = ({ setIsLoggedIn }) => {
 
     const [username,usernameupdate] = useState("");
   const [password,passwordupdate] = useState("");
@@ -20,17 +20,21 @@ export const Login = () => {
       return res.json();
     }).then((resp)=>{
       // console.log(resp);
+
       if(Object.keys(resp).length === 0){
         toast.error("Please enter valid username");
       }
       else{
+        const isLoggedIn = true; // Replace with your login logic
         if(resp.password === password){
           toast.success('Success!');
-          sessionStorage.setItem('username', username);
+          // sessionStorage.setItem('username', username);
+          setIsLoggedIn(true);
           usenavigate('/');
         }else{
           toast.error("Please enter valid credentials");
         }
+       
       }
     }).catch((err)=>{
       toast.error("Login Failed: " + err.message);
