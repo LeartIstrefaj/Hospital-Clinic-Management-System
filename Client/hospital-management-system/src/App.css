@@ -98,7 +98,6 @@
   font-size: 25px;
   font-weight: bold !important;
   text-transform: lowercase;
-
 }
 
 .btn-login {
@@ -220,4 +219,46 @@ svg{
   outline: none !important;
   box-shadow: none !important;
   background-color: transparent !important;
+}
+.error{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error-img{
+  width: 25%;
+  height: auto;
+  /* display: flex; */
+}
+.title-error{
+  font-size: 55px;
+  font-weight: 700 !important;
+  font-family: 'Inter' sans-serif !important;
+  /* color: #83b3c0; */
+  color: #447987;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+}
+.err{
+  margin-left:10px;
+  /* font-weight: 400; */
+  background-color: #83b3c0;
+  padding: 5px 20px;
+}
+.err:hover{
+  transition: .5s linear;
+  box-shadow: 5px 8px 15px 10px #CEE3F0 ;
+}
+.send-icon{
+  color: #83b3c0 !important;
+}
+.report{
+  height:80vh !important;
+  padding: 5%;
 }
