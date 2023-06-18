@@ -42,7 +42,7 @@ namespace HMS.Controllers
         public string login(Users registration)
         {
             SqlConnection con = new SqlConnection(_configuration.GetConnectionString("HMSCon").ToString());
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM users WHERE Email = '" + registration.Email + "'  AND Password = '" + registration.Password + "' ",con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM users WHERE Username = '" + registration.Username + "'  AND Password = '" + registration.Password + "' ",con);
             DataTable dt = new DataTable(); 
             da.Fill(dt);
             if(dt.Rows.Count > 0)

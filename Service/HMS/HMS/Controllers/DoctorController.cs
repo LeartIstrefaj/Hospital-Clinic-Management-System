@@ -141,14 +141,13 @@ namespace HMS.Controllers
 
 
         //Dashboard Category Count
-        //[Route("GetAllCountCategory")]
-        //public JsonResult GetAllCountCategory()
+        //[Route("GetAllCountDoctor")]
+        //public JsonResult GetAllCountDoctor()
         //{
         //    string query = @"
-        //         select COUNT(*) from dbo.Category
-        //        ";
+        //        select COUNT(*) from dbo.users ";
         //    DataTable table = new DataTable();
-        //    string sqlDataSource = _configuration.GetConnectionString("SMSCon");
+        //    string sqlDataSource = _configuration.GetConnectionString("HMSCon");
         //    SqlDataReader myReader;
         //    using (SqlConnection myCon = new SqlConnection(sqlDataSource))
         //    {
@@ -163,7 +162,6 @@ namespace HMS.Controllers
         //        }
         //    }
         //    return new JsonResult(table);
-
         //}
     }
 }

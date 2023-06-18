@@ -46,6 +46,7 @@ import { ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 import Error  from './components/Error';
 import Report from './components/Report';
+import RecordPatients from './components/RecordPatients';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -57,11 +58,12 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path='/' element={<Navbar isLoggedIn={isLoggedIn} />} />
-          <Route path='/' element={<Dashboard setIsLoggedIn={isLoggedIn} />} />
+          <Route path='/dashboard' element={<Dashboard setIsLoggedIn={isLoggedIn} />} />
           <Route path="/doctor" element={<Doctor setIsLoggedIn={isLoggedIn} />} />
           <Route path="/nurse" element={<Nurse setIsLoggedIn={isLoggedIn} />} />
           <Route path="/patient" element={<Patient setIsLoggedIn={isLoggedIn} />} />
           <Route path="/department" element={<Department setIsLoggedIn={isLoggedIn} />} />
+          <Route path="/record-patients" element={<RecordPatients setIsLoggedIn={isLoggedIn} />} />
           <Route path='*' element={<Error />} />
           <Route path='/report' element={<Report />} />
         </Routes>
