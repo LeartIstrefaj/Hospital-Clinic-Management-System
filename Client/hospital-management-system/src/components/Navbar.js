@@ -181,7 +181,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link ms-2" to="/dashboard">
+                <Link className="nav-link ms-2" to="/">
                   Dashboard
                 </Link>
               </li>
@@ -224,6 +224,11 @@ function Navbar() {
                   <li className="nav-item">
                     <Link className="nav-link ms-2" to="/department">
                       Department
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link ms-2" to="/health-report">
+                      Health Report
                     </Link>
                   </li>
                   <li className="nav-item">

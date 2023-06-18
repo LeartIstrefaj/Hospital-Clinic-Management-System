@@ -103,7 +103,7 @@ export const Login = ({ setIsLoggedIn }) => {
           }
 
           setIsLoggedIn(true);
-          navigate('/dashboard');
+          navigate('/');
         } else {
           toast.error('Please enter valid credentials');
         }

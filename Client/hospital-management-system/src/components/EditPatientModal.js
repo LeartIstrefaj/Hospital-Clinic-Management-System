@@ -95,7 +95,7 @@ centered
                     </Form.Group>
 
                     <Form.Group className='d-flex justify-content-center'>
-                        <Button variant="primary" className='rounded-5 ' type="submit">
+                        <Button variant="primary" className='rounded-5 mt-3 btn-add ' type="submit">
                             Update
                         </Button>
                     </Form.Group>

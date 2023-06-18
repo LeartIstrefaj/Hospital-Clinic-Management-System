@@ -118,6 +118,9 @@
   /* color: #2c2c2c; */
   color: #fff;
 }
+.btn-login-2 {
+  width: 50%;
+}
 
 .footer-copyright-login {
   font-size: 12px;
@@ -297,4 +300,10 @@ svg {
   transition: .5s ease;
   box-shadow: 20px 20px 60px #bebebe,
     20px 20px 60px #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  .card{
+    margin-top: 20px !important 
+  }
 }
