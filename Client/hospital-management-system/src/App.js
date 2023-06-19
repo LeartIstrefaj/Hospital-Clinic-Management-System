@@ -8,8 +8,6 @@
 // import { ToastContainer } from 'react-toastify';
 // import { Fragment } from 'react';
 
-
-
 // function App() {
 //   return (
 //       <div>
@@ -29,24 +27,24 @@
 
 // export default App;
 
-
 //------------------------------------------------------------------------
 
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import { Login } from './components/Login';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { Login } from "./components/Login";
 // import Home from './components/Home';
-import { Dashboard } from './components/Dashboard';
-import { Doctor } from './components/Doctor';
-import { Nurse } from './components/Nurse';
-import { Patient } from './components/Patient';
-import Department from './components/Department';
-import { ToastContainer } from 'react-toastify';
-import { useState } from 'react';
-import Error  from './components/Error';
-import Report from './components/Report';
-import RecordPatients from './components/RecordPatients';
+import { Dashboard } from "./components/Dashboard";
+import { Doctor } from "./components/Doctor";
+import { Nurse } from "./components/Nurse";
+import { Patient } from "./components/Patient";
+import Department from "./components/Department";
+import { ToastContainer } from "react-toastify";
+import { useState } from "react";
+import Error from "./components/Error";
+import Report from "./components/Report";
+import RecordPatients from "./components/RecordPatients";
+import { Appointment } from "./components/Appointment";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -56,16 +54,39 @@ function App() {
       <ToastContainer></ToastContainer>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path='/' element={<Navbar isLoggedIn={isLoggedIn} />} />
-          <Route path='/dashboard' element={<Dashboard setIsLoggedIn={isLoggedIn} />} />
-          <Route path="/doctor" element={<Doctor setIsLoggedIn={isLoggedIn} />} />
+          <Route
+            path="/login"
+            element={<Login setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route path="/" element={<Navbar isLoggedIn={isLoggedIn} />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard setIsLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/doctor"
+            element={<Doctor setIsLoggedIn={isLoggedIn} />}
+          />
           <Route path="/nurse" element={<Nurse setIsLoggedIn={isLoggedIn} />} />
-          <Route path="/patient" element={<Patient setIsLoggedIn={isLoggedIn} />} />
-          <Route path="/department" element={<Department setIsLoggedIn={isLoggedIn} />} />
-          <Route path="/record-patients" element={<RecordPatients setIsLoggedIn={isLoggedIn} />} />
-          <Route path='*' element={<Error />} />
-          <Route path='/report' element={<Report />} />
+          <Route
+            path="/patient"
+            element={<Patient setIsLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/department"
+            element={<Department setIsLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/appointment"
+            element={<Appointment setIsLoggedIn={isLoggedIn} />}
+          />
+          <Route
+            path="/record-patients"
+            element={<RecordPatients setIsLoggedIn={isLoggedIn} />}
+          />
+          {/* <Route path="/record-patients" element={<RecordPatients setIsLoggedIn={isLoggedIn} />} /> */}
+          <Route path="*" element={<Error />} />
+          <Route path="/report" element={<Report />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -73,5 +94,3 @@ function App() {
 }
 
 export default App;
-
-

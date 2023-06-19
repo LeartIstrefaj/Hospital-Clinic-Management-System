@@ -4,13 +4,13 @@
 // import { Doctor } from "./Doctor";
 // import {Nurse} from "./Nurse";
 // import {Patient} from "./Patient";
-// import { Logout } from "./Logout"; 
+// import { Logout } from "./Logout";
 // import { Department } from './Department';
 
 // function Navbar() {
 //   return (
 //     // <div classNameNameName="App">
-//     <BrowserRouter>  
+//     <BrowserRouter>
 //       <nav className="navbar navbar-expand-lg navbar-light">
 //       <div className="container-fluid">
 //         <a className="navbar-brand" id="logo" href="#">Clinic</a>
@@ -51,7 +51,7 @@
 //       <Route path="/doctor" element={<Doctor />} />
 //       <Route path="/nurse" element={<Nurse />} />
 //       <Route path="/patient" element={<Patient />} />
-//       <Route path="/department" element={<Department />} /> 
+//       <Route path="/department" element={<Department />} />
 //     </Routes>
 //   </div>
 //   </BrowserRouter>
@@ -64,17 +64,14 @@
 // import { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 
-
 // function Navbar() {
 //   // Check if the user is logged in
 //   const isLoggedIn = sessionStorage.getItem('username') !== null;
-
 
 //   const Logout = () => {
 
 //     sessionStorage.clear();
 //   }
-
 
 //   return (
 //     <nav className="navbar navbar-expand-lg navbar-light">
@@ -145,16 +142,12 @@
 
 // export default Navbar;
 
-
-
-
-
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  const isLoggedIn = sessionStorage.getItem('username') !== null;
-  const role = sessionStorage.getItem('role');
+  const isLoggedIn = sessionStorage.getItem("username") !== null;
+  const role = sessionStorage.getItem("role");
 
   const logout = () => {
     sessionStorage.clear();
@@ -185,7 +178,7 @@ function Navbar() {
                   Dashboard
                 </Link>
               </li>
-              {role === 'admin' && (
+              {role === "admin" && (
                 <>
                   <li className="nav-item">
                     <Link className="nav-link ms-2 " to="/doctor">
@@ -212,9 +205,14 @@ function Navbar() {
                       Record of Patients
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link ms-2 me-3" to="/appointment">
+                      Appointments
+                    </Link>
+                  </li>
                 </>
               )}
-              {role === 'doctor' && (
+              {role === "doctor" && (
                 <>
                   <li className="nav-item">
                     <Link className="nav-link ms-2" to="/patient">
@@ -233,7 +231,7 @@ function Navbar() {
                   </li>
                 </>
               )}
-              {role === 'patient' && (
+              {role === "patient" && (
                 <>
                   <li className="nav-item">
                     <Link className="nav-link ms-2" to="/dashboard">
@@ -249,8 +247,8 @@ function Navbar() {
               )}
             </ul>
             <Link className="btn-logout me-1" to="/login" onClick={logout}>
-                  Log out
-                </Link>
+              Log out
+            </Link>
           </div>
         )}
       </div>
