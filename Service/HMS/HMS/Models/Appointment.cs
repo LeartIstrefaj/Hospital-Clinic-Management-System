@@ -16,8 +16,7 @@ namespace HMS.Models
         public string PatientName { get; set; } = string.Empty;
 
         [BsonElement("date")]
-        [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
 
         [BsonElement("email")]
         public string Email { get; set; }
