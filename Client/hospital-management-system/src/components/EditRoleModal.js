@@ -8,25 +8,6 @@ export class EditRoleModal extends Component{
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //     fetch('http://localhost:36468/api/category')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             this.setState({ cats: data });
-    //         });
-    // }
-
-//     <Form.Group controlId="Type">
-//     <Form.Label>Type</Form.Label>
-//     {/* <Form.Control type="text" name="Type" required
-//         defaultValue={this.props.type}
-//         placeholder="Type" /> */}
-//      <Form.Control as="select" defaultValue={this.props.catmt}>
-//         {this.state.cats.map(cat =>
-//             <option key={cat.CategoryId}>{cat.CategoryName}</option>)}
-//     </Form.Control>
-// </Form.Group>
-
     handleSubmit(event){
         event.preventDefault();
         fetch('http://localhost:36468/api/roles',{
@@ -62,7 +43,7 @@ centered
 >
     <Modal.Header clooseButton>
         <Modal.Title className='ms-auto modal-title' id="contained-modal-title-vcenter">
-            Edit Role
+            Edit Department
         </Modal.Title>
         <Button variant="danger" className='ms-auto btn-exit' onClick={this.props.onHide}>X</Button>
 
@@ -73,6 +54,7 @@ centered
             <Col sm={6} className="mx-auto">
                 <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="RoleID">
+                        {/* <Form.Label>User ID</Form.Label> */}
                         <Form.Control type="text" name="RoleID" required
                         disabled
                         defaultValue={this.props.roleid} 

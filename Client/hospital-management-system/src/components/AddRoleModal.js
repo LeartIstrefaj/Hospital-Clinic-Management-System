@@ -17,6 +17,7 @@ export class AddRoleModal extends Component {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                //TeamId:null,
                 Role: event.target.Role.value
 
             })
@@ -40,7 +41,7 @@ export class AddRoleModal extends Component {
                     centered>
                     <Modal.Header clooseButton>
                         <Modal.Title className='ms-auto modal-title' id="contained-modal-title-vcenter">
-                            Add Role
+                            Add Department
 
                         </Modal.Title>
 
