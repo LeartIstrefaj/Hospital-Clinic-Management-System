@@ -897,24 +897,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Learta\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\miran\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Learta\\Desktop\\LAB 2\\Projekti\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\HMS.csproj",
+      "projectUniqueName": "C:\\Users\\miran\\Documents\\GitHub\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\HMS.csproj",
       "projectName": "HMS",
-      "projectPath": "C:\\Users\\Learta\\Desktop\\LAB 2\\Projekti\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\HMS.csproj",
-      "packagesPath": "C:\\Users\\Learta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Learta\\Desktop\\LAB 2\\Projekti\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\obj\\",
+      "projectPath": "C:\\Users\\miran\\Documents\\GitHub\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\HMS.csproj",
+      "packagesPath": "C:\\Users\\miran\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\miran\\Documents\\GitHub\\Hospital-Clinic-Management-System\\Service\\HMS\\HMS\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Learta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\miran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -922,7 +917,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -973,7 +968,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
