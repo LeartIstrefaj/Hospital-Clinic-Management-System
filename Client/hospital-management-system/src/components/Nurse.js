@@ -51,7 +51,7 @@ export class Nurse extends Component {
     }
 
     render() {
-        const { nursee, nurseid, nursefullname,nurseemail,nursepassword,nursenrtel } = this.state;
+        const { nursee, nurseid,nurseusername, nursefullname,nurseemail,nursepassword,nursenrtel } = this.state;
         let addModalClose = () => this.setState({ addModalShow: false });
         let editModalClose = () => this.setState({ editModalShow: false });
         return (
@@ -76,6 +76,7 @@ export class Nurse extends Component {
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Username</th>
                             <th>Full Name</th>
                             <th>Email</th>
                             <th>Password</th>
@@ -87,6 +88,7 @@ export class Nurse extends Component {
                         {nursee.map(nurse =>
                             <tr key={nurse.UserId }>
                                 <td>{nurse.UserId }</td>
+                                <td>{nurse.Username }</td>
                                 <td>{nurse.FullName }</td>
                                 <td>{nurse.Email }</td>
                                 <td>{nurse.Password}</td>
@@ -96,7 +98,7 @@ export class Nurse extends Component {
                                         <Button className="mr-2 me-2 button-toolbar" variant="warning"
                                             onClick={() => this.setState({
                                                 editModalShow: true,
-                                                nurseid: nurse.UserId, nursefullname: nurse.FullName,nurseemail: nurse.Email, nursepassword: nurse.Password, nursenrtel: nurse.NrTel
+                                                nurseid: nurse.UserId,nurseusername: nurse.Username, nursefullname: nurse.FullName,nurseemail: nurse.Email, nursepassword: nurse.Password, nursenrtel: nurse.NrTel
                                             })}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -114,6 +116,7 @@ export class Nurse extends Component {
                                         <EditNurseModal show={this.state.editModalShow}
                                             onHide={editModalClose}
                                             nurseid={nurseid}
+                                            nurseusername={nurseusername}
                                             nursefullname={nursefullname} 
                                             nurseemail={nurseemail} 
                                             nursepassword={nursepassword} 

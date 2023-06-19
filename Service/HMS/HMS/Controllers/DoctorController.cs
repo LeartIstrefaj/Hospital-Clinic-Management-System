@@ -29,7 +29,7 @@ namespace HMS.Controllers
         public JsonResult Get()
         {
             string query = @"
-                select UserId, FullName,Email,Password,NrTel from dbo.users where Role = 'Doctor'";
+                select UserId,Username, FullName,Email,Password,NrTel from dbo.users where Role = 'Doctor'";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
             SqlDataReader myReader;
@@ -59,8 +59,8 @@ namespace HMS.Controllers
             //    ,'" + d.NrTel + @"')
             //    ";
             string q = @"
-            insert into dbo.users (FullName, Email, Password, NrTel,Role)
-            values ('" + d.FullName + @"', '" + d.Email + @"', '" + d.Password + @"', '" + d.NrTel + @"', '" + d.Role + @"')
+            insert into dbo.users (Username,FullName, Email, Password, NrTel,Role)
+            values ('" + d.Username + @"','" + d.FullName + @"', '" + d.Email + @"', '" + d.Password + @"', '" + d.NrTel + @"', '" + d.Role + @"')
             ";
 
             DataTable table = new DataTable();
@@ -87,7 +87,8 @@ namespace HMS.Controllers
         {
             string query = @"
                update dbo.users set 
-               FullName = '" + d.FullName + @"'
+                Username = '" + d.Username + @"'
+               ,FullName = '" + d.FullName + @"'
                ,Email = '" + d.Email + @"'
                 ,Password = '" + d.Password + @"'
                 ,NrTel = '" + d.NrTel + @"'

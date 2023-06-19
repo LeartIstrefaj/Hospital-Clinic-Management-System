@@ -53,6 +53,7 @@ componentWillUnmount() {
     const {
       doctorr,
       doctorid,
+      doctorusername,
       doctorfullname,
       doctoremail,
       doctorpassword,
@@ -85,6 +86,7 @@ componentWillUnmount() {
           <thead className="table-head">
             <tr>
               <th>#</th>
+              <th>Username</th>
               <th>Full Name</th>
               <th>Email</th>
               <th>Password</th>
@@ -96,6 +98,7 @@ componentWillUnmount() {
             {doctorr.map((doctor) => (
               <tr key={doctor.UserId}>
                 <td>{doctor.UserId}</td>
+                <td>{doctor.Username}</td>
                 <td>{doctor.FullName}</td>
                 <td>{doctor.Email}</td>
                 <td>{doctor.Password}</td>
@@ -109,6 +112,7 @@ componentWillUnmount() {
                         this.setState({
                           editModalShow: true,
                           doctorid: doctor.UserId,
+                          doctorusername: doctor.Username,
                           doctorfullname: doctor.FullName,
                           doctoremail: doctor.Email,
                           doctorpassword: doctor.Password,
@@ -157,6 +161,7 @@ componentWillUnmount() {
                       show={this.state.editModalShow}
                       onHide={editModalClose}
                       doctorid={doctorid}
+                      doctorusername={doctorusername}
                       doctorfullname={doctorfullname}
                       doctoremail={doctoremail}
                       doctorpassword={doctorpassword}

@@ -151,6 +151,7 @@
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 
 function Navbar() {
   const isLoggedIn = sessionStorage.getItem('username') !== null;
@@ -181,27 +182,24 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link ms-2" to="/dashboard">
+                <Link className="nav-link ms-2 me-2" to="/">
                   Dashboard
                 </Link>
               </li>
               {role === 'admin' && (
                 <>
-                  <li className="nav-item">
-                    <Link className="nav-link ms-2 " to="/doctor">
-                      Doctor
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link ms-2 " to="/nurse">
-                      Nurse
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link ms-2 " to="/patient">
-                      Patient
-                    </Link>
-                  </li>
+                  <MDBDropdown>
+                    <MDBDropdownToggle tag='a' className='nav-link btn-dropdown'>
+                      Users / Roles
+                    </MDBDropdownToggle>
+                    <MDBDropdownMenu>
+                      <MDBDropdownItem link><Link className="nav-link" to="/doctor">Doctor</Link></MDBDropdownItem>
+                      <MDBDropdownItem link><Link className="nav-link" to="/nurse">Nurse</Link></MDBDropdownItem>
+                      <MDBDropdownItem link><Link className="nav-link" to="/patient">Patient</Link></MDBDropdownItem>
+                      <MDBDropdownItem link><Link className="nav-link" to="/roles">Roles</Link></MDBDropdownItem>
+                    </MDBDropdownMenu>
+                  </MDBDropdown>
+
                   <li className="nav-item">
                     <Link className="nav-link ms-2 " to="/department">
                       Department
@@ -227,6 +225,11 @@ function Navbar() {
                     </Link>
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-link ms-2" to="/health-report">
+                      Health Report
+                    </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link ms-2 me-3" to="/record-patients">
                       Record of Patients
                     </Link>
@@ -249,8 +252,8 @@ function Navbar() {
               )}
             </ul>
             <Link className="btn-logout me-1" to="/login" onClick={logout}>
-                  Log out
-                </Link>
+              Log out
+            </Link>
           </div>
         )}
       </div>
