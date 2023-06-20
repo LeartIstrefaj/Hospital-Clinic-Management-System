@@ -114,6 +114,7 @@ export class AddDoctorModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      roless: [],
       showPassword: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -125,6 +126,14 @@ export class AddDoctorModal extends Component {
     }));
   };
 
+  componentDidMount() {
+    fetch("http://localhost:36468/api/roles")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ roless: data });
+      });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     fetch("http://localhost:36468/api/doctor", {
@@ -135,6 +144,7 @@ export class AddDoctorModal extends Component {
       },
       body: JSON.stringify({
         //TeamId:null,
+        Username: event.target.Username.value,
         FullName: event.target.FullName.value,
         Email: event.target.Email.value,
         Password: event.target.Password.value,
@@ -183,6 +193,16 @@ export class AddDoctorModal extends Component {
             <Row>
               <Col sm={6} className="mx-auto">
                 <Form onSubmit={this.handleSubmit}>
+                  <Form.Group controlId="Username">
+                    {/* <Form.Label>Full Name</Form.Label> */}
+                    <Form.Control
+                      type="text"
+                      name="Username"
+                      required
+                      placeholder="Username"
+                    />
+                  </Form.Group>
+
                   <Form.Group controlId="FullName">
                     {/* <Form.Label>Full Name</Form.Label> */}
                     <Form.Control
@@ -293,7 +313,9 @@ export class AddDoctorModal extends Component {
                   <Form.Group controlId="Role">
                     {/* <Form.Label>Role </Form.Label> */}
                     <Form.Control as="select">
-                      <option>Doctor</option>
+                      {this.state.roless.map((role) => (
+                        <option key={role.RoleID}>{role.Role}</option>
+                      ))}
                     </Form.Control>
                   </Form.Group>
 

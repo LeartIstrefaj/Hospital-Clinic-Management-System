@@ -14,3 +14,10 @@ create table Departments(
 DepID int identity(1,1),
 DepName varchar(200)
 );
+
+create table Roles(
+RoleID int identity(1,1),
+Role varchar(200)
+);
+
+

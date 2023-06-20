@@ -18,6 +18,7 @@ export class EditPatientModal extends Component{
             },
             body:JSON.stringify({
                 UserId: event.target.UserId.value,
+                Username: event.target.Username.value,
                 FullName: event.target.FullName.value,
                 Email: event.target.Email.value,
                 Password: event.target.Password.value,
@@ -65,6 +66,13 @@ centered
                         placeholder="User ID"/>
                     </Form.Group>
 
+                    <Form.Group controlId="Username">
+                        {/* <Form.Label>FullName</Form.Label> */}
+                        <Form.Control type="text" name="Username" required 
+                        defaultValue={this.props.patientusername}
+                        placeholder="Username"/>
+                    </Form.Group>
+
                     <Form.Group controlId="FullName">
                         {/* <Form.Label>FullName</Form.Label> */}
                         <Form.Control type="text" name="FullName" required 
@@ -95,7 +103,7 @@ centered
                     </Form.Group>
 
                     <Form.Group className='d-flex justify-content-center'>
-                        <Button variant="primary" className='rounded-5 ' type="submit">
+                        <Button variant="primary" className='rounded-5 mt-3 btn-add ' type="submit">
                             Update
                         </Button>
                     </Form.Group>

@@ -5,6 +5,9 @@ import Navbar from "./Navbar";
 
 export const Dashboard = () => {
     const [doctorCount, setDoctorCount] = useState(0);
+    const [nurseCount, setNurseCount] = useState(0);
+    const [patientCount, setPatientCount] = useState(0);
+    const [departmentCount, setDepartmentCount] = useState(0);
 
     useEffect(() => {
         fetchCounts(); // Fetch data when the component mounts
@@ -12,9 +15,30 @@ export const Dashboard = () => {
 
     const fetchCounts = async () => {
         try {
-            const response = await fetch('http://localhost:36468/api/doctor/GetAllCountDoctor');
+            const response = await fetch('http://localhost:36468/api/count/GetAllCountDoctor');
             const data = await response.json();
             setDoctorCount(data.DoctorCount);
+        } catch (error) {
+            console.log('Error fetching data:', error);
+        }
+        try {
+            const response = await fetch('http://localhost:36468/api/count/GetAllCountNurse');
+            const data = await response.json();
+            setNurseCount(data.NurseCount);
+        } catch (error) {
+            console.log('Error fetching data:', error);
+        }
+        try {
+            const response = await fetch('http://localhost:36468/api/count/GetAllCountPatient');
+            const data = await response.json();
+            setPatientCount(data.PatientCount);
+        } catch (error) {
+            console.log('Error fetching data:', error);
+        }
+        try {
+            const response = await fetch('http://localhost:36468/api/count/GetAllCountDepartment');
+            const data = await response.json();
+            setDepartmentCount(data.DepartmentCount);
         } catch (error) {
             console.log('Error fetching data:', error);
         }
@@ -34,7 +58,7 @@ export const Dashboard = () => {
                         <div class="card">
                             <div class="card-body">
                                 <h5>Doctor</h5>
-                                <p>{doctorCount}</p>
+                                <h1 className='count-dashboard'>{doctorCount}<span className="text-dashboard"> items</span></h1>
                             </div>
                         </div>
                     </div>
@@ -42,7 +66,7 @@ export const Dashboard = () => {
                         <div class="card">
                             <div class="card-body">
                                 <h5>Nurse</h5>
-                                <p>123</p>
+                                <h1 className='count-dashboard'>{nurseCount}<span className="text-dashboard"> items</span></h1>
                             </div>
                         </div>
                     </div>
@@ -50,7 +74,7 @@ export const Dashboard = () => {
                         <div class="card">
                             <div class="card-body">
                                 <h5>Patient</h5>
-                                <p>123</p>
+                                <h1 className='count-dashboard'>{patientCount}<span className="text-dashboard"> items</span></h1>
                             </div>
                         </div>
                     </div>
@@ -58,7 +82,7 @@ export const Dashboard = () => {
                         <div class="card">
                             <div class="card-body">
                                 <h5>Department</h5>
-                                <p>123</p>
+                                <h1 className='count-dashboard'>{departmentCount}<span className="text-dashboard"> items</span></h1>
                             </div>
                         </div>
                     </div>

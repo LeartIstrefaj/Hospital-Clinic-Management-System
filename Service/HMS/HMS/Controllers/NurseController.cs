@@ -29,7 +29,7 @@ namespace HMS.Controllers
         public JsonResult Get()
         {
             string query = @"
-                select UserId, FullName,Email,Password,NrTel from dbo.users where Role = 'Nurse'";
+                select UserId,Username, FullName,Email,Password,NrTel from dbo.users where Role = 'Nurse'";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
             SqlDataReader myReader;
@@ -65,8 +65,8 @@ namespace HMS.Controllers
             //";
 
             string q = @"
-            insert into dbo.users (FullName, Email, Password, NrTel,Role)
-            values ('" + nurse.FullName + @"', '" + nurse.Email + @"', '" + nurse.Password + @"', '" + nurse.NrTel + @"', '" + nurse.Role + @"')
+            insert into dbo.users (Username, FullName, Email, Password, NrTel,Role)
+            values ('" + nurse.Username + @"','" + nurse.FullName + @"', '" + nurse.Email + @"', '" + nurse.Password + @"', '" + nurse.NrTel + @"', '" + nurse.Role + @"')
             ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
@@ -92,7 +92,8 @@ namespace HMS.Controllers
         {
             string query = @"
                update dbo.users set 
-               FullName = '" + nurse.FullName + @"'
+                Username = '" + nurse.Username + @"'
+               ,FullName = '" + nurse.FullName + @"'
                ,Email = '" + nurse.Email + @"'
                 ,Password = '" + nurse.Password + @"'
                 ,NrTel = '" + nurse.NrTel + @"'

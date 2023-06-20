@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 
 import { Button, ButtonToolbar } from "react-bootstrap";
-import { AddDoctorModal } from "./AddDoctorModal";
-import { EditDoctorModal } from "./EditDoctorModal";
+import { AddRoleModal } from "./AddRoleModal";
+import { EditRoleModal } from "./EditRoleModal";
 import Navbar from "./Navbar";
 
 export class Doctor extends Component {
   constructor(props) {
     super(props);
-    this.state = { doctorr: [], addModalShow: false, editModalShow: false };
+    this.state = { roless: [], addModalShow: false, editModalShow: false };
   }
 
   refreshList() {
-    fetch("http://localhost:36468/api/doctor")
+    fetch("http://localhost:36468/api/roles")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ doctorr: data });
+        this.setState({ roless: data });
       });
   }
 
@@ -37,9 +37,9 @@ componentWillUnmount() {
     clearInterval(this.setInterval);
 }
 
-  deleteTeams(did) {
+  deleteTeams(rid) {
     if (window.confirm("Are you sure?")) {
-      fetch("http://localhost:36468/api/doctor/" + did, {
+      fetch("http://localhost:36468/api/roles/" + rid, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -51,13 +51,9 @@ componentWillUnmount() {
 
   render() {
     const {
-      doctorr,
-      doctorid,
-      doctorusername,
-      doctorfullname,
-      doctoremail,
-      doctorpassword,
-      doctornrtel,
+      roless,
+      roleid,
+      rolename,
     } = this.state;
     let addModalClose = () => this.setState({ addModalShow: false });
     let editModalClose = () => this.setState({ editModalShow: false });
@@ -76,7 +72,7 @@ componentWillUnmount() {
             + Doctor
           </Button>
 
-          <AddDoctorModal
+          <AddRoleModal
             show={this.state.addModalShow}
             onHide={addModalClose}
           />
@@ -86,23 +82,15 @@ componentWillUnmount() {
           <thead className="table-head">
             <tr>
               <th>#</th>
-              <th>Username</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th>Nr.Tel</th>
+              <th>Role</th>
               <th>Opportunities</th>
             </tr>
           </thead>
           <tbody>
-            {doctorr.map((doctor) => (
-              <tr key={doctor.UserId}>
-                <td>{doctor.UserId}</td>
-                <td>{doctor.Username}</td>
-                <td>{doctor.FullName}</td>
-                <td>{doctor.Email}</td>
-                <td>{doctor.Password}</td>
-                <td>{doctor.NrTel}</td>
+            {roless.map((role) => (
+              <tr key={role.RoleID}>
+                <td>{role.RoleID}</td>
+                <td>{role.Role}</td>
                 <td>
                   <ButtonToolbar className="btn-action">
                     <Button
@@ -111,12 +99,8 @@ componentWillUnmount() {
                       onClick={() =>
                         this.setState({
                           editModalShow: true,
-                          doctorid: doctor.UserId,
-                          doctorusername: doctor.Username,
-                          doctorfullname: doctor.FullName,
-                          doctoremail: doctor.Email,
-                          doctorpassword: doctor.Password,
-                          doctornrtel: doctor.NrTel,
+                          roleid: role.RoleID,
+                          rolename: role.Role,
                         })
                       }
                     >
@@ -141,7 +125,7 @@ componentWillUnmount() {
                     <Button
                       className="mr-2 button-toolbar"
                       variant="danger"
-                      onClick={() => this.deleteTeams(doctor.UserId)}
+                      onClick={() => this.deleteTeams(role.RoleID)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -157,15 +141,11 @@ componentWillUnmount() {
                       </svg>
                     </Button>
 
-                    <EditDoctorModal
+                    <EditRoleModal
                       show={this.state.editModalShow}
                       onHide={editModalClose}
-                      doctorid={doctorid}
-                      doctorusername={doctorusername}
-                      doctorfullname={doctorfullname}
-                      doctoremail={doctoremail}
-                      doctorpassword={doctorpassword}
-                      doctornrtel={doctornrtel}
+                      roleid={roleid}
+                      rolename={rolename}
                     />
                   </ButtonToolbar>
                 </td>

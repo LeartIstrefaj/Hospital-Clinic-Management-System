@@ -1,26 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HMS.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using HMS.Models;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
-using System.Numerics;
 
 namespace HMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PatientController : ControllerBase
+    public class RolesController : ControllerBase
     {
         private readonly IConfiguration _configuration;
 
-        public PatientController(IConfiguration configuration)
+        public RolesController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -29,7 +22,7 @@ namespace HMS.Controllers
         public JsonResult Get()
         {
             string query = @"
-                select UserId,Username, FullName,Email,Password,NrTel from dbo.users where Role = 'Patient'";
+                select RoleID, Role from dbo.Roles";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
             SqlDataReader myReader;
@@ -49,12 +42,11 @@ namespace HMS.Controllers
         }
 
         [HttpPost]
-        public JsonResult Post(Patient p)
+        public JsonResult Post(Roles r)
         {
-           
             string q = @"
-            insert into dbo.users (Username,FullName, Email, Password, NrTel,Role)
-            values ('" + p.Username + @"','" + p.FullName + @"', '" + p.Email + @"', '" + p.Password + @"', '" + p.NrTel + @"', '" +p.Role + @"')
+            insert into dbo.Roles (Role)
+            values ('" + r.Role + @"')
             ";
 
             DataTable table = new DataTable();
@@ -77,16 +69,12 @@ namespace HMS.Controllers
         }
 
         [HttpPut]
-        public JsonResult Put(Patient p)
+        public JsonResult Put(Roles r)
         {
             string query = @"
-               update dbo.users set 
-                Username = '" + p.Username + @"'
-               ,FullName = '" + p.FullName + @"'
-               ,Email = '" + p.Email + @"'
-                ,Password = '" + p.Password + @"'
-                ,NrTel = '" + p.NrTel + @"'
-               where UserID = " + p.UserID + @"
+               update dbo.Roles set 
+               Role = '" + r.Role + @"'
+               where RoleID = " + r.RoleID + @"
                ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
@@ -112,8 +100,8 @@ namespace HMS.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-               delete from dbo.users
-               where UserID = " + id + @"
+               delete from dbo.Roles
+               where RoleID = " + id + @"
                ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("HMSCon");
@@ -133,7 +121,5 @@ namespace HMS.Controllers
                 return new JsonResult("Deleted Successfully");
             }
         }
-
     }
 }
-

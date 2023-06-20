@@ -18,6 +18,7 @@ export class EditNurseModal extends Component{
             },
             body:JSON.stringify({
                 UserId: event.target.UserId.value,
+                Username: event.target.Username.value,
                 FullName: event.target.FullName.value,
                 Email: event.target.Email.value,
                 Password: event.target.Password.value,
@@ -63,6 +64,12 @@ centered
                         disabled
                         defaultValue={this.props.nurseid} 
                         placeholder="User ID"/>
+                    </Form.Group>
+                    <Form.Group controlId="Username">
+                        {/* <Form.Label>FullName</Form.Label> */}
+                        <Form.Control type="text" name="Username" required 
+                        defaultValue={this.props.nuseusername}
+                        placeholder="Username"/>
                     </Form.Group>
 
                     <Form.Group controlId="FullName">
