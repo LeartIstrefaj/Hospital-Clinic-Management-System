@@ -30,16 +30,27 @@ export class Appointment extends Component {
   componentWillUnmount() {
     clearInterval(this.setInterval);
   }
-
   deleteTeams(aid) {
     if (window.confirm("Are you sure?")) {
-      fetch("http://localhost:36468/api/appointment/" + aid, {
+      fetch(`http://localhost:36468/api/appointment/${aid}`, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-      });
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log("Item deleted successfully.");
+          } else {
+            console.error("Failed to delete item.");
+          }
+        })
+        .catch((error) => {
+          // Network or fetch error
+          console.error("Error occurred during the deletion:", error);
+          // You can handle the error or display an error message here
+        });
     }
   }
 
@@ -138,9 +149,7 @@ export class Appointment extends Component {
                       <Button
                         className="mr-2 button-toolbar"
                         variant="danger"
-                        onClick={() =>
-                          this.deleteTeams(appointment.appointmentId)
-                        }
+                        onClick={() => this.deleteTeams(appointment.Id)}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

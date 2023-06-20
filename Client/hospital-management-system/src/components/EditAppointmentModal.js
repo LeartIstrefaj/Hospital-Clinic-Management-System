@@ -9,10 +9,8 @@ export class EditAppointmentModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.props);
-    const appointmentId = this.props.appointmentId;
     fetch(
-      `http://localhost:36468/api/appointment/${this.props.appointmentId}`,
+      `http://localhost:36468/api/appointment/${event.target.appointmentId.value}`,
       {
         method: "PUT",
         headers: {
@@ -20,7 +18,7 @@ export class EditAppointmentModal extends Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          appointmentId: appointmentId,
+          id: event.target.appointmentId.value,
           patientName: event.target.patientName.value,
           date: event.target.date.value,
           email: event.target.email.value,
