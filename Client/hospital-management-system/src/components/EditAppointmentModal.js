@@ -5,6 +5,7 @@ export class EditAppointmentModal extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.props);
   }
 
   handleSubmit(event) {
@@ -82,7 +83,7 @@ export class EditAppointmentModal extends Component {
                       type="text"
                       name="patientName"
                       required
-                      defaultValue={this.props.patientName}
+                      defaultValue={this.props.appointmentPatientName}
                       placeholder="Patient Name"
                     />
                   </Form.Group>
@@ -92,7 +93,7 @@ export class EditAppointmentModal extends Component {
                       type="text"
                       name="date"
                       required
-                      defaultValue={this.props.date}
+                      defaultValue={this.props.appointmentDate}
                       placeholder="Date"
                     />
                   </Form.Group>
@@ -102,7 +103,7 @@ export class EditAppointmentModal extends Component {
                       type="text"
                       name="email"
                       required
-                      defaultValue={this.props.email}
+                      defaultValue={this.props.Email}
                       placeholder="Email"
                     />
                   </Form.Group>
@@ -112,7 +113,7 @@ export class EditAppointmentModal extends Component {
                       type="text"
                       name="doctorName"
                       required
-                      defaultValue={this.props.doctorName}
+                      defaultValue={this.props.DoctorName}
                       placeholder="Doctor name"
                     />
                   </Form.Group>
@@ -122,7 +123,7 @@ export class EditAppointmentModal extends Component {
                       type="text"
                       name="roomNo"
                       required
-                      defaultValue={this.props.roomNo}
+                      defaultValue={this.props.RoomNo}
                       placeholder="Room Number"
                     />
                   </Form.Group>
